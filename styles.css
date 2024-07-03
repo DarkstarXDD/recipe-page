@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Young Serif";
+  font-weight: 400;
+  src: local("YoungSerif-Regular"),
+    url("/assets/fonts/YoungSerif-Regular.woff2");
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-VariableFont_wght.woff2");
+}
+
+/* ------------------- CSS Reset ------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+*:focus-visible {
+  outline: 0.125rem dotted var(--clr-primary-400);
+  outline-offset: 0.125rem;
+}
+
+img,
+svg,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button {
+  font: inherit;
+}
