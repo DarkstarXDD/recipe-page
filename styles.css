@@ -15,8 +15,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
+  /* list-style: none;
+  text-decoration: none; */
+  list-style-position: inside;
 }
 
 *:focus-visible {
@@ -35,4 +36,128 @@ picture {
 input,
 button {
   font: inherit;
+}
+
+/* ------------------- CSS Variables ------------------- */
+:root {
+  --ff-heading: "Young Serif", serif;
+  --ff-body: "Outfit", sans-serif;
+
+  --fs-heading-l: 2.25rem; /* Change to 2.5 on desktop */
+  --fs-heading-m: 1.75rem;
+  --fs-heading-s: 1.25rem;
+  --fs-body: 1rem;
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-snow: hsl(330, 100%, 98%);
+  --clr-white-coffee: hsl(30, 18%, 87%);
+  --clr-eggshell: hsl(30, 54%, 90%);
+  --clr-dark-charcoal: hsl(30, 5%, 18%);
+
+  --clr-wenge-brown: hsl(30, 10%, 34%);
+  --clr-brandy-red: hsl(14, 45%, 36%);
+  --clr-dark-raspberry: hsl(332, 51%, 32%);
+}
+
+/* ------------------- Utility Classes ------------------- */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.heading-l {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-heading-l);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--clr-dark-charcoal);
+}
+
+.heading-m {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-heading-m);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--clr-brandy-red);
+}
+
+.heading-s {
+  font-size: var(--fs-heading-s);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--clr-dark-raspberry);
+}
+/* ------------------- End of Utility Classes ------------------- */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--clr-wenge-brown);
+}
+
+strong {
+  font-weight: 700;
+}
+
+.wrapper-outside {
+  max-width: 375px;
+}
+
+.wrapper-inside {
+  gap: 2rem;
+  padding: 2.5rem 2rem;
+}
+
+.wrapper-title {
+  gap: 1.5rem;
+}
+
+.wrapper-prep {
+  background-color: var(--clr-snow);
+  gap: 1rem;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.prep-list {
+  gap: 0.5rem;
+  padding-inline-start: 0.5rem;
+}
+
+.prep-list-item::marker {
+  color: var(--clr-dark-raspberry);
+  /* margin-right: 2rem; */
+}
+
+.wrapper-ingredients {
+  gap: 1.5rem;
+}
+
+.ingredients-list {
+  gap: 0.5rem;
+}
+
+.ingredients-list > li {
+  padding-left: 1rem;
+}
+
+.ingredients-list > li::marker {
+  color: var(--clr-brandy-red);
+}
+
+.wrapper-instructions {
+  gap: 1.5rem;
+}
+
+.instructions-list {
+  gap: 0.5rem;
+}
+
+.instructions-list > li::marker {
+  font-weight: 700;
+  color: var(--clr-brandy-red);
 }
