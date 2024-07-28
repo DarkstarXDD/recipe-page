@@ -15,8 +15,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  list-style-position: inside;
-  list-style: none;
 }
 
 *:focus-visible {
@@ -135,22 +133,14 @@ hr {
 
 .prep-list {
   gap: 0.5rem;
-  padding-inline-start: 0.5rem;
+  padding-inline-start: 1.5rem;
 }
 
-.prep-list-item {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 1.5rem;
+.prep-list > li {
+  padding-inline-start: 1rem;
 }
 
-.prep-list-item::before {
-  content: "•";
-  color: var(--clr-dark-raspberry);
-}
-
-.prep-list-item::marker {
+.prep-list > li::marker {
   color: var(--clr-dark-raspberry);
 }
 
@@ -160,18 +150,14 @@ hr {
 
 .ingredients-list {
   gap: 0.5rem;
-  padding-inline-start: 0.5rem;
+  padding-inline-start: 1.5rem;
 }
 
 .ingredients-list > li {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 1.5rem;
+  padding-inline-start: 1rem;
 }
 
-.ingredients-list > li::before {
-  content: "•";
+.ingredients-list > li::marker {
   color: var(--clr-brandy-red);
 }
 
@@ -180,8 +166,12 @@ hr {
 }
 
 .instructions-list {
-  list-style-type: decimal;
   gap: 0.5rem;
+  padding-inline-start: 1.5rem;
+}
+
+.instructions-list > li {
+  padding-inline-start: 1rem;
 }
 
 .instructions-list > li::marker {
