@@ -15,9 +15,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* list-style: none;
-  text-decoration: none; */
   list-style-position: inside;
+  list-style: none;
 }
 
 *:focus-visible {
@@ -64,7 +63,6 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .heading-l {
@@ -92,19 +90,31 @@ button {
 /* ------------------- End of Utility Classes ------------------- */
 
 body {
+  min-height: 100dvh;
+  align-items: center;
   font-family: var(--ff-body);
   font-size: var(--fs-body);
   font-weight: 400;
   line-height: 1.5;
   color: var(--clr-wenge-brown);
+  background-color: var(--clr-eggshell);
+}
+
+.main {
+  background-color: white;
 }
 
 strong {
   font-weight: 700;
 }
 
+hr {
+  border: none;
+  border: 1px solid var(--clr-white-coffee);
+}
+
 .wrapper-outside {
-  max-width: 375px;
+  max-width: 46rem;
 }
 
 .wrapper-inside {
@@ -128,9 +138,20 @@ strong {
   padding-inline-start: 0.5rem;
 }
 
+.prep-list-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.prep-list-item::before {
+  content: "•";
+  color: var(--clr-dark-raspberry);
+}
+
 .prep-list-item::marker {
   color: var(--clr-dark-raspberry);
-  /* margin-right: 2rem; */
 }
 
 .wrapper-ingredients {
@@ -139,13 +160,18 @@ strong {
 
 .ingredients-list {
   gap: 0.5rem;
+  padding-inline-start: 0.5rem;
 }
 
 .ingredients-list > li {
-  padding-left: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.ingredients-list > li::marker {
+.ingredients-list > li::before {
+  content: "•";
   color: var(--clr-brandy-red);
 }
 
@@ -154,10 +180,78 @@ strong {
 }
 
 .instructions-list {
+  list-style-type: decimal;
   gap: 0.5rem;
 }
 
 .instructions-list > li::marker {
   font-weight: 700;
   color: var(--clr-brandy-red);
+}
+
+.wrapper-nutrition {
+  gap: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid var(--clr-white-coffee);
+}
+
+tr:last-of-type {
+  border-bottom: none;
+}
+
+th,
+td {
+  width: 50%;
+  text-align: start;
+  padding: 0.75rem 2rem;
+}
+
+th {
+  font-weight: 400;
+}
+
+td {
+  font-weight: 700;
+  color: var(--clr-brandy-red);
+}
+
+tr:first-child th,
+tr:first-child td {
+  padding-top: 0;
+}
+
+tr:last-child th,
+tr:last-child td {
+  padding-bottom: 0;
+}
+
+/* ------------------- Media Queries ------------------- */
+@media (min-width: 46rem) {
+  :root {
+    --fs-heading-l: 2.5rem;
+  }
+
+  .main {
+    border-radius: 24px;
+  }
+
+  .hero-img {
+    border-radius: 12px;
+  }
+
+  .wrapper-outside {
+    gap: 2.5rem;
+    padding: 2.5rem;
+  }
+
+  .wrapper-inside {
+    padding: 0;
+  }
 }
