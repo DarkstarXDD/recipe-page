@@ -217,6 +217,10 @@ tr:last-child td {
     --fs-heading-l: 2.5rem;
   }
 
+  body {
+    padding: 1.5rem;
+  }
+
   .main {
     border-radius: 24px;
   }
